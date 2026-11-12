@@ -1,0 +1,52 @@
+{
+    "name": "mahesh-kerai/payment-gateways",
+    "description": "A Laravel package for integrating multiple payment gateways (Stripe, Razorpay, Flutterwave, Paystack, PayPal, Midtrans, PhonePe, JazzCash) with a unified interface",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahesh Kerai",
+            "email": "wrteam.mahesh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/database": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^9.0|^10.0|^11.0|^12.0|^13.0",
+        "stripe/stripe-php": "^10.0",
+        "razorpay/razorpay": "^2.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "midtrans/midtrans-php": "^2.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^9.5.10|^10.1|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MaheshKerai\\PaymentGateways\\": "src/",
+            "MaheshKerai\\PaymentGateways\\Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "src/Helpers/payment_helper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MaheshKerai\\PaymentGateways\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MaheshKerai\\PaymentGateways\\PaymentGatewaysServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
